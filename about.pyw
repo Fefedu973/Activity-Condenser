@@ -75,7 +75,9 @@ class AboutApp:
             t1.start()
 
     def downloadFunc(self):
-        r = requests.get("https://github.com/Fefedu973/Activity-Condenser/releases/latest/download/package.zip")
+        response = requests.get("https://api.github.com/repos/Fefedu973/Activity-Condenser/releases/latest")
+        getver = re.sub("[^0-9,.]", "", (response.json()["name"]))
+        r = requests.get("https://github.com/Fefedu973/Activity-Condenser/archive/refs/tags/", getver,".zip")
         with open("Activity-Condenser.zip", "wb") as code:
             code.write(r.content)
         self.label3.configure(foreground='green')    
