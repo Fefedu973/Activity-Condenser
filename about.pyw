@@ -61,10 +61,10 @@ class AboutApp:
 
 
     def update(self):
-        response = requests.get("https://api.github.com/repos/v2ray/v2ray-core/releases/latest")
+        response = requests.get("https://api.github.com/repos/Fefedu973/Activity-Condenser/releases/latest")
         getver = re.sub("[^0-9,.]", "", (response.json()["name"]))
         print(getver)
-        if getver == "1.0.0":
+        if getver == "0.0.1":
             self.label3.configure(foreground='green')
             self.update.set("You have the latest version")
             
@@ -75,12 +75,12 @@ class AboutApp:
             t1.start()
 
     def downloadFunc(self):
-        r = requests.get("https://github.com/Fefedu973/Fefe_du_973-Launcher/releases/download/1.3.1/Fefe_du_973-Launcher-win-x64.exe")
-        with open("Fefe_du_973-Launcher-win-x64.exe", "wb") as code:
+        r = requests.get("https://github.com/Fefedu973/Activity-Condenser/releases/latest/download/package.zip")
+        with open("Activity-Condenser.zip", "wb") as code:
             code.write(r.content)
         self.label3.configure(foreground='green')    
-        self.update.set("Download complete ! Installing... please wait")
-        subprocess.call("Fefe_du_973-Launcher-win-x64.exe", shell=True)
+        self.update.set("Download complete ! Stop me and replace me \nwith the new version downloaded in my folder")
+        #subprocess.call("Activity-Condenser.zip", shell=True)
 
 
     
