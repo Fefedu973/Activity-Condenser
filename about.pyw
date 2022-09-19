@@ -64,7 +64,7 @@ class AboutApp:
         response = requests.get("https://api.github.com/repos/Fefedu973/Activity-Condenser/releases/latest")
         getver = re.sub("[^0-9,.]", "", (response.json()["name"]))
         print(getver)
-        if getver == "0.0.1":
+        if getver == "0.0.3":
             self.label3.configure(foreground='green')
             self.update.set("You have the latest version")
             
