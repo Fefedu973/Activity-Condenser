@@ -4,12 +4,12 @@
 
 #### [<p align="center">]() *(A powerful python software to condense multiple discord Activities into a single animated one)*
 [<p align="center">]()
-![GitHub all releases](https://img.shields.io/github/downloads/luuxis/Selvania-Launcher/total?style=for-the-badge)
+![GitHub all releases](https://img.shields.io/github/downloads/Fefedu973/Activity-Condenser/total?style=for-the-badge)
 ![Discord](https://img.shields.io/discord/819729377650278420?style=for-the-badge)
-![GitHub package.json version](https://img.shields.io/github/package-json/v/luuxis/Selvania-Launcher?style=for-the-badge)
+![GitHub package.json version](https://img.shields.io/github/package-json/v/Fefedu973/Activity-Condenser?style=for-the-badge)
 [<p align="center">]()
-![GitHub forks](https://img.shields.io/github/forks/luuxis/Selvania-Launcher?style=for-the-badge)
-![GitHub Repo stars](https://img.shields.io/github/stars/luuxis/Selvania-Launcher?style=for-the-badge)
+![GitHub forks](https://img.shields.io/github/forks/Fefedu973/Activity-Condenser?style=for-the-badge)
+![GitHub Repo stars](https://img.shields.io/github/stars/Fefedu973/Activity-Condenser?style=for-the-badge)
 
 
 ---
@@ -20,11 +20,11 @@
 
 ### **<ins><p align="center">Screenshots :</p>**
 
-<img src="images/3.png" alt="screenshot3"><p align="center"> *Page principale*
+<img src="images/3.png" alt="screenshot3"><p align="center"> *Without Activity Condenser*
 
 &nbsp;
 
-<img src="images/4.png" alt="screenshot4"><p align="center"> *Page de gestion des skins*
+<img src="images/4.png" alt="screenshot4"><p align="center"> *With Activity Condenser*
 
 &nbsp;
 <img src="images/5.png" alt="screenshot5"><p align="center"> *Page de gestion des comptes*
