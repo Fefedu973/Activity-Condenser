@@ -1,4 +1,4 @@
-<p align="center"><img src="images/icon.png" alt="icon-launcher"></p>
+<p align="center"><img src="main.png" alt="icon-launcher"></p>
 
 <h1 align="center">Activity Condenser</h1>
 
