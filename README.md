@@ -5,11 +5,13 @@
 #### [<p align="center">]() *(A powerful python software to condense multiple discord Activities into a single animated one)*
 [<p align="center">]()
 ![GitHub all releases](https://img.shields.io/github/downloads/Fefedu973/Activity-Condenser/total?style=for-the-badge)
-![Discord](https://img.shields.io/discord/819729377650278420?style=for-the-badge)
-![GitHub package.json version](https://img.shields.io/github/package-json/v/Fefedu973/Activity-Condenser?style=for-the-badge)
+![Discord](https://img.shields.io/discord/807892248935006208?style=for-the-badge)
+![GitHub](https://img.shields.io/github/license/Fefedu973/Activity-Condenser?style=for-the-badge)
+![GitHub repo size](https://img.shields.io/github/repo-size/Fefedu973/Activity-Condenser?style=for-the-badge)
 [<p align="center">]()
 ![GitHub forks](https://img.shields.io/github/forks/Fefedu973/Activity-Condenser?style=for-the-badge)
 ![GitHub Repo stars](https://img.shields.io/github/stars/Fefedu973/Activity-Condenser?style=for-the-badge)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/w/Fefedu973/Activity-Condenser?style=for-the-badge)
 
 
 ---
