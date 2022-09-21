@@ -1,8 +1,8 @@
 <p align="center"><img src="images/icon.png" alt="icon-launcher"></p>
 
-<h1 align="center">CraftLaunch</h1>
+<h1 align="center">Activity Condenser</h1>
 
-#### [<p align="center">]() *(Un launcher minecraft performant et puissant basé sur electron)*
+#### [<p align="center">]() *(A powerful python software to condense multiple discord Activities into a single animated one)*
 [<p align="center">]()
 ![GitHub all releases](https://img.shields.io/github/downloads/luuxis/Selvania-Launcher/total?style=for-the-badge)
 ![Discord](https://img.shields.io/discord/819729377650278420?style=for-the-badge)
@@ -11,12 +11,10 @@
 ![GitHub forks](https://img.shields.io/github/forks/luuxis/Selvania-Launcher?style=for-the-badge)
 ![GitHub Repo stars](https://img.shields.io/github/stars/luuxis/Selvania-Launcher?style=for-the-badge)
 
-#### *<p align="center">Do you speak english 🇬🇧/🇺🇸 ? You can find the readme and the documentation translated into English [Here](/README_EN-US.md).</p>*
 
 ---
-### **<ins><p align="center">Conditions d'utilisation :</p>**
-- Pour utiliser le code vous devez faire un fork du projet
-- Pour utiliser le code votre code doit tout le temps être public
+### **<ins><p align="center">Terms of use :</p>**
+- This project is under MIT liscense you MUST follow this LISCENCE
 
 ---
 
