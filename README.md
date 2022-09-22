@@ -31,16 +31,7 @@
 
 ---
 
-### **<ins><p align="center">Activity Condenser features</p>**
-
-...
-
-This is not an exhaustive list. Install Activity Condenser to see all it can do!
-Do you like the project? Leave a ⭐ star on the repo!
-
----
-
-### **<ins><p align="center">Planed Activity Condenser features and limitations</p>**
+### **<ins><p align="center">Activity Condenser features and limitaions</p>**
 
 ## **Features :**
 - Condense multiple players activity into a single one
@@ -59,6 +50,20 @@ Do you like the project? Leave a ⭐ star on the repo!
 - For now you need to create a discord server or invite your bot to one of your discord servers to be able to run the app
 
 ALL (except the last one) of these limitations are due to discord limitations. THEY ARE NOT FIXABLE as long as discord does not update its api
+
+This is not an exhaustive list. Install Activity Condenser to see all it can do!
+  
+Do you like the project? Leave a ⭐ star on the repo!
+
+---
+
+### **<ins><p align="center">Planed Activity Condenser features</p>**
+
+- Auto Light/Dark mode switching
+- Auto check for update on start
+- Installation of the application with the modules provided + python + modification of a module automatically
+- Update With auto launch GUI
+- Update GUI
 
 ---
 
