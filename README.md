@@ -22,55 +22,21 @@
 
 ### **<ins><p align="center">Screenshots :</p>**
 
-<img src="images/3.png" alt="screenshot3"><p align="center"> *Without Activity Condenser*
-
-&nbsp;
-
-<img src="images/4.png" alt="screenshot4"><p align="center"> *With Activity Condenser*
-
-&nbsp;
-<img src="images/5.png" alt="screenshot5"><p align="center"> *Page de gestion des comptes*
-
-&nbsp;
-<img src="images/1.png" alt="screenshot8"><p align="center"> *Page de connexion*
+<img src="images/3.png" alt="screenshot1"><p align="center"> *Without Activity Condenser*
 
 ---
 
-### **<ins><p align="center">Fonctionnalitées du launcher :</p>**
+### **<ins><p align="center">Activity Condenser features</p>**
 
-- ✅ Mise à jour automatiques via github.
+...
 
-- 🔴 Option pour mettre le launcher en maintenance.
+This is not an exhaustive list. Install Activity Condenser to see all it can do!
 
-- 🔒 Authentification Microsoft.
+---
 
-- 🏴‍☠️ Authentification Crack.
+### **<ins><p align="center">Planed Activity Condenser features</p>**
 
-- ⛏️ Supporte toutes versions de Minecraft 1.5.2 > 1.19.x (Forge, Fabric etc).
-
-- 📦 Supporte les version moddées Forge et Fabric (Pas les MCP)
- 
-- 📰 Fil d'actualité intégré nativement au launcher.
-
-- 🚹 Gestionnaire de skins.
-
-- ⚙️ Gestion intuitive des paramètres, y compris un panneau de configuration Java.
-
-- 🟢 Statut serveur complet.
-
-    - Opérationnel ou hors ligne.
-    
-    - Nombres de joueurs connectés.
-
-- ☕ Installation de Java automatique.
-
-    - Si vous avez installé une version incompatible de Java, nous installerons la bonne pour vous.
-    
-    - Vous n'avez pas besoin d'avoir Java installé pour exécuter le launcher.
-
-Ce n'est pas une liste exhaustive. Installez le launcher pour voir tout ce qu'il peut faire !
-
-Vous aimez le projet ? Laissez une étoile ⭐ sur le repo !
+Do you like the project? Leave a ⭐ star on the repo!
 
 ---
 
