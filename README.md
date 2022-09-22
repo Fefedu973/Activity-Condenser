@@ -22,6 +22,8 @@
 
 ### **<ins><p align="center">Screenshots :</p>**
 
+<img src="images/3.png" alt="screenshot1"><p align="center"> *With Activity Condenser*
+ &nbsp;
 <img src="images/3.png" alt="screenshot1"><p align="center"> *Without Activity Condenser*
 
 ---
@@ -31,53 +33,43 @@
 ...
 
 This is not an exhaustive list. Install Activity Condenser to see all it can do!
+Do you like the project? Leave a ⭐ star on the repo!
 
 ---
 
 ### **<ins><p align="center">Planed Activity Condenser features</p>**
 
-Do you like the project? Leave a ⭐ star on the repo!
+...
 
 ---
 
-### **<ins><p align="center">Vous avez besoin d'aide pour faire votre propre launcher ? :</p>**
+### **<ins><p align="center">Do you need help using the software? :</p>**
 
-- Voici le [Wiki](./wiki.md) spécialement rédigé pour vous guider pas à pas dans la création de votre launcher.
+...
 
 ---
-### **<ins><p align="center">Téléchargement :</p>**
+### **<ins><p align="center">Download :</p>**
 
-Vous pouvez télécharger le launcher à partir des [Releases GitHub](https://github.com/luuxis/Selvania-Launcher/releases).
+Vous pouvez télécharger le launcher à partir des [Releases GitHub](https://github.com/Fefedu973/Activity-Condeser/releases).
 
-Plateformes supportées :
+Supported platforms :
 
 - Windows 
-- Linux
-- MacOS
-
-Si vous téléchargez à partir des Releases, sélectionnez le programme d'installation de votre système.
-
- Plateforme | Fichier |
-| -------- | ---- |
-| Windows x64 | `Selvania-Launcher-win-x64.exe ` |
-| macOS x64 | `Selvania-Launcher-mac-x64.dmg` |
-| macOS arm64 | `Selvania-Launcher-mac-arm64.dmg` |
-| Linux x64 | `Selvania-Launcher-linux-x86_64.AppImage` |
 
 ---
 
 <br>
 
-Si vous aimez ce projet et que vous voulez aider à le développer, vous pouvez nous faire un don sur [Paypal](https://www.paypal.me/luuxiss).
+If you like this project and want to help develop it, you can donate to us on [Paypal](https://www.paypal.me/).
 
-Si vous avez des questions, un problème ou des suggestions n'hésitez pas à rejoindre notre discord :
+If you have any questions, problems or suggestions, feel free to join our discord:
 
 <br>
 
-[<p align="center"><img src="https://discordapp.com/api/guilds/819729377650278420/embed.png?style=banner2" alt="discord">](https://discord.gg/e9q7Yr2cuQ) 
+[<p align="center"><img src="https://discordapp.com/api/guilds/807892248935006208/embed.png?style=banner2" alt="discord">](https://discord.gg/Q8tSgzvDWQ) 
 ---
 
 <br>
 <br>
 
-[<p align="center">]() *Readme réalisé par [@Fefe_du_973](https://github.com/Fefedu973)*  </p>
+[<p align="center">]() *Readme made by [@Fefe_du_973](https://github.com/Fefedu973)*  </p>
