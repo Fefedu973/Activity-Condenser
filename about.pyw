@@ -7,6 +7,7 @@ import requests
 import re
 import subprocess
 import threading
+import sv_ttk
 
 
 class AboutApp:
@@ -19,10 +20,10 @@ class AboutApp:
         toplevel1.title("About Activity Condenser")
         frame2 = tk.Frame(toplevel1)
         frame2.configure(height=200, padx=50, pady=10, width=200)
-        label1 = tk.Label(frame2)
+        label1 = ttk.Label(frame2)
         label1.configure(font="{Arial} 16 {bold}", text="Activity Condenser\n")
         label1.grid(column=0, padx="60 0", pady="0 15", row=0, sticky="w")
-        button1 = tk.Button(frame2)
+        button1 = ttk.Button(frame2)
         button1.configure(cursor="hand2", text="Ok", width=12)
         button1.grid(column=0, pady="30 0", row=4, sticky="e")
         button1.configure(command=self.on_ok)
@@ -45,7 +46,7 @@ class AboutApp:
         canvas1.grid(column=0, pady="0 15", row=0, sticky="w")
         self.img = img = ImageTk.PhotoImage(Image.open("icon2.png"))  
         canvas1.create_image(0, 0, anchor=NW, image=img) 
-        button2 = tk.Button(frame2)
+        button2 = ttk.Button(frame2)
         button2.configure(cursor="hand2", text="Check for updates", width=15)
         button2.grid(column=0, pady="30 0", row=4, sticky="w")
         button2.configure(command=self.update)
@@ -55,6 +56,7 @@ class AboutApp:
         self.label3.configure(foreground='red', textvariable=self.update)
         self.label3.grid(column=0, row=5, sticky="w")
         frame2.pack(side="top")
+        sv_ttk.use_light_theme()
 
         # Main widget
         self.mainwindow = toplevel1
