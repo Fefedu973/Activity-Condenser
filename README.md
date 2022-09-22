@@ -64,6 +64,9 @@ Do you like the project? Leave a ⭐ star on the repo!
 - Installation of the application with the modules provided + python + modification of a module automatically
 - Update With auto launch GUI
 - Update GUI
+- Create a workaround for the button link (maybe a better discord optional plugin? I dont know maybe a script to paste in the discord console if you have any idea tell me!)
+
+Of course you can help me with pull requests !
 
 ---
 
