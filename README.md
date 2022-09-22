@@ -22,9 +22,12 @@
 
 ### **<ins><p align="center">Screenshots :</p>**
 
-<img src="images/3.png" alt="screenshot1"><p align="center"> *With Activity Condenser*
- &nbsp;
-<img src="images/3.png" alt="screenshot1"><p align="center"> *Without Activity Condenser*
+
+<img src="images/3.png" alt="screenshot3"><p align="center"> *Without Activity Condenser*
+
+&nbsp;
+
+<img src="images/4.png" alt="screenshot4"><p align="center"> *With Activity Condenser*
 
 ---
 
@@ -50,7 +53,7 @@ Do you like the project? Leave a ⭐ star on the repo!
 ---
 ### **<ins><p align="center">Download :</p>**
 
-Vous pouvez télécharger le launcher à partir des [Releases GitHub](https://github.com/Fefedu973/Activity-Condeser/releases).
+you can download the software from [GitHub Releases](https://github.com/Fefedu973/Activity-Condeser/releases).
 
 Supported platforms :
 
