@@ -23,11 +23,11 @@
 ### **<ins><p align="center">Screenshots :</p>**
 
 
-<img src="images/3.png" alt="screenshot3"><p align="center"> *Without Activity Condenser*
+<img src="without.png" alt="screenshot3"><p align="center"> *Without Activity Condenser*
 
 &nbsp;
 
-<img src="images/4.png" alt="screenshot4"><p align="center"> *With Activity Condenser*
+<img src="with.gif" alt="screenshot4"><p align="center"> *With Activity Condenser*
 
 ---
 
