@@ -8,6 +8,12 @@ import re
 import subprocess
 import threading
 import sv_ttk
+import darkdetect
+
+if darkdetect.isDark():
+    theme = 'dark'
+else:
+    theme = 'light'
 
 
 class AboutApp:
@@ -56,7 +62,7 @@ class AboutApp:
         self.label3.configure(foreground='red', textvariable=self.update)
         self.label3.grid(column=0, row=5, sticky="w")
         frame2.pack(side="top")
-        sv_ttk.use_light_theme()
+        sv_ttk.set_theme(theme)
 
         # Main widget
         self.mainwindow = toplevel1

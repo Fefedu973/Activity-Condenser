@@ -1,0 +1,18 @@
+Metadata-Version: 1.1
+Name: infi.systray
+Version: 0.1.12
+Summary: Windows system tray icon
+Home-page: https://github.com/Infinidat/infi.systray
+Author: Arnon Yaari
+Author-email: arnony@infinidat.com
+License: BSD
+Description: For the complete document, please refer to the README.md file over at GitHub
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.2
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Software Development :: Libraries :: Python Modules

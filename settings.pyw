@@ -5,10 +5,16 @@ import json
 import win32com.client
 import os
 import sv_ttk
+import darkdetect
 
 
 with open('settings.json') as f:
     data = json.load(f)
+
+if darkdetect.isDark():
+    theme = 'dark'
+else:
+    theme = 'light'
 
 class SettingsApp:
     def __init__(self, master=None):
@@ -87,7 +93,7 @@ class SettingsApp:
         label5.configure(text="Username (with #) :")
         label5.grid(column=0, pady="0 5", row=6)
         frame2.pack(side="top")
-        sv_ttk.use_light_theme()
+        sv_ttk.set_theme(theme)
 
         # Main widget
         self.mainwindow = toplevel1

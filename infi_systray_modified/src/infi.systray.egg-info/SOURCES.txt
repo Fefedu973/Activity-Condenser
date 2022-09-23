@@ -1,0 +1,15 @@
+README.md
+setup.cfg
+setup.py
+src/infi/__init__.py
+src/infi.systray.egg-info/PKG-INFO
+src/infi.systray.egg-info/SOURCES.txt
+src/infi.systray.egg-info/dependency_links.txt
+src/infi.systray.egg-info/namespace_packages.txt
+src/infi.systray.egg-info/not-zip-safe
+src/infi.systray.egg-info/requires.txt
+src/infi.systray.egg-info/top_level.txt
+src/infi/systray/__init__.py
+src/infi/systray/__version__.py
+src/infi/systray/traybar.py
+src/infi/systray/win32_adapter.py
