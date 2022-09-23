@@ -41,7 +41,8 @@
 - Custom User picker
 - Custom Bot Token
 - Custom App ID
-- Start with windows
+- Start with windows (buggy)
+- Auto Light/Dark mode switching
 
 ## **Limitaions :**
 - Cannot change the main title text
@@ -59,7 +60,6 @@ Do you like the project? Leave a ⭐ star on the repo!
 
 ### **<ins><p align="center">Planed Activity Condenser features</p>**
 
-- Auto Light/Dark mode switching
 - Auto check for update on start
 - Installation of the application with the modules provided + python + modification of a module automatically
 - Update With auto launch GUI
