@@ -31,24 +31,48 @@
 
 ---
 
-### **<ins><p align="center">Activity Condenser features</p>**
+### **<ins><p align="center">Activity Condenser features and limitaions</p>**
 
-...
+## **Features :**
+- Condense multiple players activity into a single one
+- Check updates 
+- Windows 11 style
+- Custom refrseh time
+- Custom User picker
+- Custom Bot Token
+- Custom App ID
+- Start with windows (buggy)
+- Auto Light/Dark mode switching
+
+## **Limitaions :**
+- Cannot change the main title text
+- Cannot set a refresh time less than 15 seconds
+- Cannot create working buttons (buttons are displayed but not working)
+- For now you need to create a discord server or invite your bot to one of your discord servers to be able to run the app
+
+ALL (except the last one) of these limitations are due to discord limitations. THEY ARE NOT FIXABLE as long as discord does not update its api
 
 This is not an exhaustive list. Install Activity Condenser to see all it can do!
+  
 Do you like the project? Leave a ⭐ star on the repo!
 
 ---
 
 ### **<ins><p align="center">Planed Activity Condenser features</p>**
 
-...
+- Auto check for update on start
+- Installation of the application with the modules provided + python + modification of a module automatically
+- Update With auto launch GUI
+- Update GUI
+- Create a workaround for the button link (maybe a better discord optional plugin? I dont know maybe a script to paste in the discord console if you have any idea tell me!)
+
+Of course you can help me with pull requests !
 
 ---
 
 ### **<ins><p align="center">Do you need help using the software? :</p>**
 
-...
+The wiki is under developpment
 
 ---
 ### **<ins><p align="center">Download :</p>**
