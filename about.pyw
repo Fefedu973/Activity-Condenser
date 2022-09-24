@@ -9,6 +9,7 @@ import subprocess
 import threading
 import sv_ttk
 import darkdetect
+import subprocess as sp
 
 if darkdetect.isDark():
     theme = 'dark'
@@ -77,21 +78,8 @@ class AboutApp:
             self.update.set("You have the latest version")
             
         else:
-            self.label3.configure(foreground='red')
-            self.update.set("New version available Downloading... please wait") 
-            t1 = threading.Thread(target=self.downloadFunc)
-            t1.start()
-
-    def downloadFunc(self):
-        response = requests.get("https://api.github.com/repos/Fefedu973/Activity-Condenser/releases/latest")
-        getver = re.sub("[^0-9,.]", "", (response.json()["name"]))
-        r = requests.get(f'https://github.com/Fefedu973/Activity-Condenser/archive/refs/tags/{getver}.zip')
-        print(r)
-        with open("Activity-Condenser.zip", "wb") as code:
-            code.write(r.content)
-        self.label3.configure(foreground='green')    
-        self.update.set("Download complete ! Stop me and replace me \nwith the new version downloaded in my folder")
-        #subprocess.call("Activity-Condenser.zip", shell=True)
+            self.update.set("New version available")
+            sp.Popen(['python','checkupdate2.py'])
 
 
     

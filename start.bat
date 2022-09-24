@@ -1,0 +1,2 @@
+python checkupdate.py
+pause

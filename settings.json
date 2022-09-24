@@ -1,7 +1,8 @@
 {
-    "run_on_start": 0,
+    "run_on_start": 1,
     "Client_ID": "",
     "Bot_Token": "",
     "refresh_time": 15,
-    "username": ""
+    "username": "",
+    "checkonstart": 1
 }
