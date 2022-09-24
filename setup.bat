@@ -16,6 +16,6 @@ exit
 goto:eof
 
 :errorNoPython
-PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""C:\Users\duboi\Downloads\Bot\Activity-Condenser\python-download.ps1""' -Verb RunAs}"
+PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""$PSScriptRoot\python-download.ps1""' -Verb RunAs}"
 pause
 
