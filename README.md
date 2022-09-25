@@ -16,7 +16,8 @@
 
 ---
 ### **<ins><p align="center">Terms of use :</p>**
-- This project is under MIT liscense you MUST follow this LISCENCE
+- This project is under MIT liscense you MUST follow this LICENCE
+- This is not an obligation but a request: please do not use this project for: commercial use - closed source use - please credit me. Thanks !
 
 ---
 
