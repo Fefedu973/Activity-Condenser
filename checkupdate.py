@@ -27,7 +27,7 @@ getver = re.sub("[^0-9,.]", "", (response.json()["name"]))
 print(getver)
 
 if data['checkonstart'] == 1:
-    if getver == "0.0.4":
+    if getver == "0.0.3":
         sp.Popen(['python','tray.py'])
         sys.exit()
 

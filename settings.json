@@ -4,6 +4,5 @@
     "Bot_Token": "",
     "refresh_time": 15,
     "username": "",
-    "checkonstart": 1,
-    "version": "1.0.0"
+    "checkonstart": 1
 }
