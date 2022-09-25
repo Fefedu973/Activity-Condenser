@@ -26,8 +26,11 @@ getchangelog = (response.json()["body"])
 getver = re.sub("[^0-9,.]", "", (response.json()["name"]))
 print(getver)
 
+with open('version.json') as f:
+    version = json.load(f)
+
 if data['checkonstart'] == 1:
-    if getver == "0.0.3":
+    if getver == version['version']:
         sp.Popen(['python','tray.py'])
         sys.exit()
 

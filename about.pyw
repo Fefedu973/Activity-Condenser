@@ -10,12 +10,15 @@ import threading
 import sv_ttk
 import darkdetect
 import subprocess as sp
+import json
 
 if darkdetect.isDark():
     theme = 'dark'
 else:
     theme = 'light'
 
+with open('version.json') as f:
+    version = json.load(f)
 
 class AboutApp:
     def __init__(self, master=None):
@@ -73,11 +76,12 @@ class AboutApp:
         response = requests.get("https://api.github.com/repos/Fefedu973/Activity-Condenser/releases/latest")
         getver = re.sub("[^0-9,.]", "", (response.json()["name"]))
         print(getver)
-        if getver == "0.0.3":
+        if getver == version['version']:
             self.label3.configure(foreground='green')
             self.update.set("You have the latest version")
             
         else:
+            print(version['version'])
             self.update.set("New version available")
             sp.Popen(['python','checkupdate2.py'])
 
