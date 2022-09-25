@@ -67,6 +67,7 @@ Do you like the project? Leave a ⭐ star on the repo!
 
 - Option to start discord with the software or to start the software with discord i dont know
 - Create a workaround for the button link (maybe a better discord optional plugin? I dont know maybe a script to paste in the discord console if you have any idea tell me!)
+- And clean the code a little bit (you can help me of course !)
 
 Of course you can help me with pull requests !
 
