@@ -16,7 +16,8 @@
 
 ---
 ### **<ins><p align="center">Terms of use :</p>**
-- This project is under MIT liscense you MUST follow this LISCENCE
+- This project is under MIT liscense you MUST follow this LICENCE
+- This is not an obligation but a request: please do not use this project for: commercial use - closed source use - please credit me. Thanks !
 
 ---
 
@@ -64,8 +65,9 @@ Do you like the project? Leave a ⭐ star on the repo!
 
 ### **<ins><p align="center">Planed Activity Condenser features</p>**
 
-- Option to start discord with the software
+- Option to start discord with the software or to start the software with discord i dont know
 - Create a workaround for the button link (maybe a better discord optional plugin? I dont know maybe a script to paste in the discord console if you have any idea tell me!)
+- And clean the code a little bit (you can help me of course !)
 
 Of course you can help me with pull requests !
 
@@ -78,7 +80,7 @@ The wiki is under developpment
 ---
 ### **<ins><p align="center">Download :</p>**
 
-you can download the software from [GitHub Releases](https://github.com/Fefedu973/Activity-Condeser/releases).
+You can download the software from [GitHub Releases](https://github.com/Fefedu973/Activity-Condeser/releases).
 
 Supported platforms :
 
