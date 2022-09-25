@@ -43,6 +43,10 @@
 - Custom App ID
 - Start with windows (buggy)
 - Auto Light/Dark mode switching
+- Auto check for update on start
+- Installation of the application with the modules provided + python + modification of a module automatically
+- Update With auto launch GUI
+- Update GUI
 
 ## **Limitaions :**
 - Cannot change the main title text
@@ -60,10 +64,7 @@ Do you like the project? Leave a ⭐ star on the repo!
 
 ### **<ins><p align="center">Planed Activity Condenser features</p>**
 
-- Auto check for update on start
-- Installation of the application with the modules provided + python + modification of a module automatically
-- Update With auto launch GUI
-- Update GUI
+- Option to start discord with the software
 - Create a workaround for the button link (maybe a better discord optional plugin? I dont know maybe a script to paste in the discord console if you have any idea tell me!)
 
 Of course you can help me with pull requests !
