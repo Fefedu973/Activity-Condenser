@@ -4,8 +4,8 @@ CD /D "%~dp0"
 
 set currentDir=%cd%
 
-Del “%USERPROFILE%\AppData\Local\Microsoft\WindowsApps\python.exe”
-Del “%USERPROFILE%\AppData\Local\Microsoft\WindowsApps\python3.exe”
+Del %USERPROFILE%\AppData\Local\Microsoft\WindowsApps\python.exe
+Del %USERPROFILE%\AppData\Local\Microsoft\WindowsApps\python3.exe
 
 
 python --version 2>NUL
