@@ -1,4 +1,12 @@
+pushd "%CD%"
+CD /D "%~dp0"
+
+
 set currentDir=%cd%
+
+Del “%USERPROFILE%\AppData\Local\Microsoft\WindowsApps\python.exe”
+Del “%USERPROFILE%\AppData\Local\Microsoft\WindowsApps\python3.exe”
+
 
 python --version 2>NUL
 if errorlevel 1 goto errorNoPython
@@ -49,7 +57,7 @@ echo,
 
 if not exist %PYTHON_EXE% (
 if exist %PYTHON_MSI% (
-    %PYTHON_MSI% /quiet InstallAllUsers=1 TargetDir=c:\Python310 PrependPath=1 Include_pip=1
+    %PYTHON_MSI% /quiet InstallAllUsers=1 PrependPath=1 TargetDir=c:\Python310  Include_pip=1
 ) else (
     echo Python installer package didn't seem to download correctly.
     exit /b 1
@@ -82,66 +90,6 @@ set PATH=%PATH%;%PYTHON_PATH%
 
 echo,
 echo ------------------------------------------------------------------
-echo Fix permissions so that Lib\site-packages and Scripts are read-
-echo write capable for Limited User Accounts.
-echo ------------------------------------------------------------------
-echo,
-
-
-
-
-echo,
-echo ------------------------------------------------------------------
-echo Download pywin32
-echo ------------------------------------------------------------------
-echo,
-
-if not exist %PYWIN_EXE% (
-    echo "http://downloads.sourceforge.net/project/pywin32/pywin32/Build%%20%PYWIN_BUILD%/%PYWIN_EXE%"
-    curl -L -O "http://downloads.sourceforge.net/project/pywin32/pywin32/Build%%20%PYWIN_BUILD%/%PYWIN_EXE%"
-    copy /y %PYWIN_EXE% c:\Python310
-)
-
-
-rem echo,
-rem echo ------------------------------------------------------------------
-rem echo Install pywin32
-rem echo ------------------------------------------------------------------
-rem echo,
-
-rem if exist %PYWIN_EXE% (
-rem     start /wait %PYWIN_EXE%
-rem ) else (
-rem     echo pywin32 installer didn't seem to download correctly.
-rem     exit /b 1
-rem )
-
-echo,
-echo ------------------------------------------------------------------
-echo Add easy_install
-echo ------------------------------------------------------------------
-echo,
-
-if not exist ez_setup.py (
-    curl -O https://bitbucket.org/pypa/setuptools/raw/bootstrap/ez_setup.py
-)
-
-python ez_setup.py
-
-echo,
-echo ------------------------------------------------------------------
-echo Add pip
-echo ------------------------------------------------------------------
-echo,
-
-if not exist get-pip.py (
-    curl -O https://raw.github.com/pypa/pip/master/contrib/get-pip.py
-)
-
-python get-pip.py
-
-echo,
-echo ------------------------------------------------------------------
 echo Install Dependencies
 echo ------------------------------------------------------------------
 echo,
@@ -156,17 +104,6 @@ pip install nest-asyncio
 pip install pywin32
 pip install darkdetect
 pip install -e "%currentDir%\infi_systray_modified"
-
-echo,
-echo ------------------------------------------------------------------
-echo Fix Lib\site-packages permissions to include BUILTIN\Users:R
-echo according to cacls output.
-echo
-echo Have to do this recursively all the way down.
-echo ------------------------------------------------------------------
-echo,
-
-echo y| cacls c:\Python310\Lib\site-packages\*.* /T /E /G BUILTIN\Users:R
 
 echo,
 echo ------------------------------------------------------------------
