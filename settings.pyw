@@ -133,7 +133,7 @@ class SettingsApp:
         if run_on_start == 1:
             src = os.path.join(os.getenv("APPDATA"),"Microsoft\Windows\Start Menu\Programs\Startup")
             pthtemp = os.path.dirname(os.path.realpath(__file__))
-            pth = pthtemp + "\\tray.py"
+            pth = pthtemp + "\\start.bat"
             desktop = src
             path = os.path.join(desktop, 'Activity-Condenser.lnk')
             target = pth

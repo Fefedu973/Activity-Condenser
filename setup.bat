@@ -57,7 +57,7 @@ echo,
 
 if not exist %PYTHON_EXE% (
 if exist %PYTHON_MSI% (
-    %PYTHON_MSI% /quiet InstallAllUsers=1 PrependPath=1 TargetDir=c:\Python310  Include_pip=1
+    %PYTHON_MSI% /quiet InstallAllUsers=1 PrependPath=1 TargetDir=c:\Python310 Include_pip=1
 ) else (
     echo Python installer package didn't seem to download correctly.
     exit /b 1
