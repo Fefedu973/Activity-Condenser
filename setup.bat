@@ -104,6 +104,7 @@ pip install nest-asyncio
 pip install pywin32
 pip install darkdetect
 pip install -e "%currentDir%\infi_systray_modified"
+Del %PYTHON_MSI%
 
 echo,
 echo ------------------------------------------------------------------

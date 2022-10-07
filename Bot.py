@@ -4,10 +4,15 @@ import json
 from pypresence import Presence
 import time
 import nest_asyncio
+import os
 
 nest_asyncio.apply()
 
-with open('settings.json') as f:
+src = os.path.join(os.getenv("APPDATA"),"Activity-Condenser")
+settingssrc = os.path.join(src,"settings.json")
+datasrc = os.path.join(src,"data.json")
+
+with open(settingssrc) as f:
     settings = json.load(f)
     print(settings)
 
@@ -63,7 +68,7 @@ async def on_presence_update(before, after):
                 print('Updated', after.activities[i].name)
                 print('___')
         jsonString = json.dumps(ls_dict, indent=4, default=str)
-        jsonFile = open("data.json", "w")
+        jsonFile = open(datasrc, "w")
         jsonFile.write(jsonString)
         print('Json File Updated')
         temp = {}

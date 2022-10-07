@@ -1,8 +1,13 @@
 import json
 from pypresence import Presence
 import time
+import os
 
-with open('settings.json') as j:
+src = os.path.join(os.getenv("APPDATA"),"Activity-Condenser")
+settingssrc = os.path.join(src,"settings.json")
+datasrc = os.path.join(src,"data.json")
+
+with open(settingssrc) as j:
     settings = json.load(j)
     print(settings)
 
@@ -11,7 +16,7 @@ RPC = Presence(client_id )
 RPC.connect()
 
 while 1 == 1:
-   f = open('data.json')
+   f = open(datasrc)
 
    data = json.load(f)
 

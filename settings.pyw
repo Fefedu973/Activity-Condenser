@@ -7,8 +7,10 @@ import os
 import sv_ttk
 import darkdetect
 
+src = os.path.join(os.getenv("APPDATA"),"Activity-Condenser")
+settingssrc = os.path.join(src,"settings.json")
 
-with open('settings.json') as f:
+with open(settingssrc) as f:
     data = json.load(f)
 
 if darkdetect.isDark():
@@ -127,7 +129,7 @@ class SettingsApp:
             "username": username,
             "checkonstart": checkonstart
         }
-        with open('settings.json', 'w') as f:
+        with open(settingssrc, 'w') as f:
             json.dump(settings, f, indent=4)
         
         if run_on_start == 1:

@@ -13,8 +13,13 @@ from tkinter import scrolledtext
 import subprocess as sp
 import sys
 import json
+import os
 
-with open('settings.json') as f:
+src = os.path.join(os.getenv("APPDATA"),"Activity-Condenser")
+settingssrc = os.path.join(src,"settings.json")
+downloadsrc = os.path.join(src,"Activity-Condenser.exe")
+
+with open(settingssrc) as f:
     data = json.load(f)
 
 if darkdetect.isDark():
@@ -90,7 +95,7 @@ class UpdateApp:
 
     def check(self):
         data['checkonstart'] = self.check2.get()
-        with open('settings.json', 'w') as f:
+        with open(settingssrc, 'w') as f:
             json.dump(data, f, indent=4)
         print(data)
 
@@ -108,11 +113,11 @@ class UpdateApp:
         getver = re.sub("[^0-9,.]", "", (response.json()["name"]))
         r = requests.get(f'https://github.com/Fefedu973/Activity-Condenser/releases/download/{getver}/Activity-Condenser.exe')
         print(r)
-        with open("Activity-Condenser.exe", "wb") as code:
+        with open(downloadsrc, "wb") as code:
             code.write(r.content)
         self.label3.configure(foreground='green')    
         self.update.set("Download complete ! Please wait for the installer to start")
-        subprocess.call("Activity-Condenser.exe", shell=True)
+        subprocess.call(downloadsrc, shell=True)
 
     def cancel(self):
         sp.Popen(['python','tray.py'])

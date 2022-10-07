@@ -5,8 +5,6 @@ from tkinter import *
 from PIL import ImageTk,Image
 import requests  
 import re
-import subprocess
-import threading
 import sv_ttk
 import darkdetect
 import subprocess as sp
@@ -71,7 +69,6 @@ class AboutApp:
         # Main widget
         self.mainwindow = toplevel1
 
-
     def update(self):
         response = requests.get("https://api.github.com/repos/Fefedu973/Activity-Condenser/releases/latest")
         getver = re.sub("[^0-9,.]", "", (response.json()["name"]))
@@ -85,17 +82,11 @@ class AboutApp:
             self.update.set("New version available")
             sp.Popen(['python','checkupdate2.py'])
 
-
-    
-            
-
     def run(self):
         self.mainwindow.mainloop()
 
     def on_ok(self):
         self.mainwindow.destroy()
-
-
 
 if __name__ == "__main__":
     app = AboutApp()

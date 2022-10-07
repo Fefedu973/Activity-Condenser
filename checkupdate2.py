@@ -12,6 +12,10 @@ import darkdetect
 from tkinter import scrolledtext
 import subprocess as sp
 import sys
+import os
+
+src = os.path.join(os.getenv("APPDATA"),"Activity-Condenser")
+downloadsrc = os.path.join(src,"Activity-Condenser.exe")
 
 if darkdetect.isDark():
     theme = 'dark'
@@ -78,11 +82,11 @@ class UpdateApp:
         getver = re.sub("[^0-9,.]", "", (response.json()["name"]))
         r = requests.get(f'https://github.com/Fefedu973/Activity-Condenser/releases/download/{getver}/Activity-Condenser.exe')
         print(r)
-        with open("Activity-Condenser.exe", "wb") as code:
+        with open(downloadsrc, "wb") as code:
             code.write(r.content)
         self.label3.configure(foreground='green')    
         self.update.set("Download complete ! Please wait for the installer to start")
-        subprocess.call("Activity-Condenser.exe", shell=True)
+        subprocess.call(downloadsrc, shell=True)
 
     def cancel(self):
         self.mainwindow.destroy()

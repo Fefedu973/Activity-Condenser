@@ -15,14 +15,14 @@ hover_text = "Activity condenser"
 icon = "main.ico"
 z = 0
 def settings(sysTrayIcon):
-    os.system("settings.pyw")
+    os.system("python settings.pyw")
 def bye(sysTrayIcon):
     sp.Popen.terminate(extProc)
     sp.Popen.terminate(extProc2)
 def do_nothing(sysTrayIcon):
     pass
 def about(sysTrayIcon):
-    os.system("about.pyw")
+    os.system("python about.pyw")
 
 menu_options = (('Settings...', 'settings.ico', settings),
                 ('About', 'about.ico', about),
