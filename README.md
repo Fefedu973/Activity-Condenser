@@ -65,8 +65,7 @@ Do you like the project? Leave a ⭐ star on the repo!
 
 ### **<ins><p align="center">Planed Activity Condenser features</p>**
 
-- change icon to white if the system theme is dark 
-- Connection status in the about menu and an option to reconnect (if discord was not started) with error message like "discord not found or not started" or "connected"
+- Make the connection button work
 - Hide consoles 
 - Create a workaround for the button link (maybe a better discord optional plugin? I dont know maybe a script to paste in the discord console if you have any idea tell me!)
 - And clean the code a little bit (you can help me of course !)
