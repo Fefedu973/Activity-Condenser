@@ -19,8 +19,10 @@ downloadsrc = os.path.join(src,"Activity-Condenser.exe")
 
 if darkdetect.isDark():
     theme = 'dark'
+    icontheme = 'about-white.ico'
 else:
     theme = 'light'
+    icontheme = 'about-dark.ico'
 response = requests.get("https://api.github.com/repos/Fefedu973/Activity-Condenser/releases/latest")
 getchangelog = (response.json()["body"])
 
@@ -29,7 +31,7 @@ class UpdateApp:
     def __init__(self, master=None):
         # build ui
         toplevel1 = tk.Tk() if master is None else tk.Toplevel(master)
-        toplevel1.iconbitmap('about.ico')
+        toplevel1.iconbitmap(icontheme)
         toplevel1.configure(height=200, width=200)
         toplevel1.resizable(False, False)
         toplevel1.title("update")

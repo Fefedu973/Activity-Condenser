@@ -12,8 +12,10 @@ import json
 
 if darkdetect.isDark():
     theme = 'dark'
+    icontheme = 'about-white.ico'
 else:
     theme = 'light'
+    icontheme = 'about-dark.ico'
 
 with open('version.json') as f:
     version = json.load(f)
@@ -22,7 +24,7 @@ class AboutApp:
     def __init__(self, master=None):
         # build ui
         toplevel1 = tk.Tk() if master is None else tk.Toplevel(master)
-        toplevel1.iconbitmap('settings.ico')
+        toplevel1.iconbitmap(icontheme)
         toplevel1.configure(height=200, width=200)
         toplevel1.resizable(False, False)
         toplevel1.title("About Activity Condenser")

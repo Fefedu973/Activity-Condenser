@@ -15,14 +15,16 @@ with open(settingssrc) as f:
 
 if darkdetect.isDark():
     theme = 'dark'
+    icontheme = 'settings-white.ico'
 else:
     theme = 'light'
+    icontheme = 'settings-dark.ico'
 
 class SettingsApp:
     def __init__(self, master=None):
         # build ui
         toplevel1 = tk.Tk() if master is None else tk.Toplevel(master)
-        toplevel1.iconbitmap('settings.ico')
+        toplevel1.iconbitmap(icontheme)
         toplevel1.configure(height=200, width=200)
         toplevel1.resizable(False, False)
         toplevel1.title("Settings")
@@ -149,6 +151,8 @@ class SettingsApp:
         else:
             if os.path.exists(os.path.join(os.getenv("APPDATA"),"Microsoft\Windows\Start Menu\Programs\Startup\Activity-Condenser.lnk")):
                 os.remove(os.path.join(os.getenv("APPDATA"),"Microsoft\Windows\Start Menu\Programs\Startup\Activity-Condenser.lnk"))
+        
+        #recoit les infos extProc1 et extProc2 puis kill le process puis relance le process avec sp.Popen et remet les infos dans le json
 
         self.mainwindow.destroy()
 

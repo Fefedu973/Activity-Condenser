@@ -11,6 +11,7 @@ nest_asyncio.apply()
 src = os.path.join(os.getenv("APPDATA"),"Activity-Condenser")
 settingssrc = os.path.join(src,"settings.json")
 datasrc = os.path.join(src,"data.json")
+errors = os.path.join(src,"errors.json")
 
 with open(settingssrc) as f:
     settings = json.load(f)
@@ -29,9 +30,19 @@ ls_dict = {"Presence":[]}
 
 bot = commands.Bot(command_prefix=BOT_PREFIX, intents = intents)
 
-client_id = settings['Client_ID']
-RPC = Presence(client_id )
-RPC.connect()
+try :
+    client_id = settings['Client_ID']
+    RPC = Presence(client_id )
+    RPC.connect()
+except Exception as e:
+    print('______________________________________')
+    print(e)
+    errorfinal = {"Errors":e}
+    jsonString = json.dumps(errorfinal, indent=4, default=str)
+    jsonFile = open(errors, "w")
+    jsonFile.write(jsonString)
+    print('______________________________________')
+    exit()
 
 async def rpc():
         print(RPC.update(state="...", details="Loading"))
@@ -73,5 +84,17 @@ async def on_presence_update(before, after):
         print('Json File Updated')
         temp = {}
         ls_dict = {"Presence":[]}
+    else :
+        print('The user is not the one you want to track, maybe you entered the wrong username in the settings page ?')
 
-bot.run(TOKEN)
+try :
+    bot.run(TOKEN)
+except Exception as e:
+    print('______________________________________')
+    print(e)
+    errorfinal = {"Errors":e}
+    jsonString = json.dumps(errorfinal, indent=4, default=str)
+    jsonFile = open(errors, "w")
+    jsonFile.write(jsonString)
+    print('______________________________________')
+    exit()

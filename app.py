@@ -6,14 +6,25 @@ import os
 src = os.path.join(os.getenv("APPDATA"),"Activity-Condenser")
 settingssrc = os.path.join(src,"settings.json")
 datasrc = os.path.join(src,"data.json")
+errors = os.path.join(src,"errors.json")
 
 with open(settingssrc) as j:
     settings = json.load(j)
     print(settings)
 
-client_id = settings['Client_ID']
-RPC = Presence(client_id )
-RPC.connect()
+try :
+    client_id = settings['Client_ID']
+    RPC = Presence(client_id )
+    RPC.connect()
+except Exception as e:
+    print('______________________________________')
+    errorfinal = {"Errors":e}
+    jsonString = json.dumps(errorfinal, indent=4, default=str)
+    jsonFile = open(errors, "w")
+    jsonFile.write(jsonString)
+    print(e)
+    print('______________________________________')
+    exit()
 
 while 1 == 1:
    f = open(datasrc)
