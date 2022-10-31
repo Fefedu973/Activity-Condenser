@@ -201,31 +201,10 @@ class SettingsApp:
                     os.remove(os.path.join(os.getenv("APPDATA"),"Microsoft\Windows\Start Menu\Programs\Startup\Activity-Condenser.lnk"))
                 else:
                     pass
-            try:
-                botprocess = processfinal['bot']
-                appprocess = processfinal['app']
-                botterminate = psutil.Process(botprocess)
-                appterminate = psutil.Process(appprocess)
-                appterminate.terminate()
-                botterminate.terminate()
-            except:
-                pass
-            t4 = threading.Thread(target=self.restart)
-            t4.start()
-            self.mainwindow.destroy()
         else:
             pass
 
-    def restart(self):
-        extProc = sp.Popen(['python','bot.py'])
-        BotProcess = {"bot":extProc.pid}
-        time.sleep(10)
-        extProc2 = sp.Popen(['python','app.py'])
-        AppProcess = {"app":extProc2.pid}
-        Processjoin = {**BotProcess, **AppProcess}
-        jsonString = json.dumps(Processjoin, indent=4, default=str)
-        jsonFile = open(process, "w")
-        jsonFile.write(jsonString)
+
 
     def cancel(self):
         self.mainwindow.destroy()
