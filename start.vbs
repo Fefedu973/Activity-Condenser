@@ -1,6 +1,4 @@
-Set oShell = CreateObject ("Wscript.Shell") 
-Dim strArgs
+Set shell = CreateObject("WScript.Shell")
 scriptdir = CreateObject("Scripting.FileSystemObject").GetParentFolderName(WScript.ScriptFullName)
-scriptfile = scriptdir & "\start.bat"
-strArgs = "cmd /c" & scriptfile
-oShell.Run strArgs, 0, false
+shell.CurrentDirectory = scriptdir
+shell.Run "start.bat", 0, False
