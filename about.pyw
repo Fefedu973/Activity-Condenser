@@ -9,8 +9,8 @@ import sv_ttk
 import darkdetect
 import subprocess as sp
 import json
-
 import ctypes
+import ctypes as ct
 
 myappid = 'mycompany.myproduct.subproduct.version' # arbitrary string
 ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
@@ -90,6 +90,18 @@ class AboutApp:
             sp.Popen(['python','checkupdate2.py'])
 
     def run(self):
+        if darkdetect.isDark():
+            self.mainwindow.update()
+            DWMWA_USE_IMMERSIVE_DARK_MODE = 20
+            set_window_attribute = ct.windll.dwmapi.DwmSetWindowAttribute
+            get_parent = ct.windll.user32.GetParent
+            hwnd = get_parent(self.mainwindow.winfo_id())
+            rendering_policy = DWMWA_USE_IMMERSIVE_DARK_MODE
+            value = 2
+            value = ct.c_int(value)
+            set_window_attribute(hwnd, rendering_policy, ct.byref(value),ct.sizeof(value))
+        else:
+            pass
         self.mainwindow.mainloop()
 
     def on_ok(self):

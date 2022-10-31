@@ -2,7 +2,6 @@
 import tkinter as tk
 import tkinter.ttk as ttk
 from tkinter import *
-from PIL import ImageTk,Image
 import requests  
 import re
 import subprocess
@@ -10,11 +9,10 @@ import threading
 import sv_ttk
 import darkdetect
 from tkinter import scrolledtext
-import subprocess as sp
 import sys
 import os
-
 import ctypes
+import ctypes as ct
 
 myappid = 'mycompany.myproduct.subproduct.version' # arbitrary string
 ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
@@ -75,6 +73,18 @@ class UpdateApp:
         self.mainwindow = toplevel1
 
     def run(self):
+        if darkdetect.isDark():
+            self.mainwindow.update()
+            DWMWA_USE_IMMERSIVE_DARK_MODE = 20
+            set_window_attribute = ct.windll.dwmapi.DwmSetWindowAttribute
+            get_parent = ct.windll.user32.GetParent
+            hwnd = get_parent(self.mainwindow.winfo_id())
+            rendering_policy = DWMWA_USE_IMMERSIVE_DARK_MODE
+            value = 2
+            value = ct.c_int(value)
+            set_window_attribute(hwnd, rendering_policy, ct.byref(value),ct.sizeof(value))
+        else:
+            pass
         self.mainwindow.mainloop()
 
     def install(self):
