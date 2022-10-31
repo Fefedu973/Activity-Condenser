@@ -115,7 +115,7 @@ echo Dependencies of the project are now installed!
 echo ------------------------------------------------------------------
 echo,
 
-python settings.pyw
+python settingssetup.pyw
 python tray.py
 
 pause

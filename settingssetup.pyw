@@ -26,7 +26,6 @@ errors = os.path.join(src,"errors.json")
 with open(settingssrc) as debug:
     startdebug = json.load(debug)
 
-
 async def get_application_id():
   global tokenerror
   global IDvalue
@@ -38,14 +37,11 @@ async def get_application_id():
       tokenerror = ''
       print('Token is valid')
     except:
-      tokenerror = 'Error'
+      tokenerror = ''
       IDvalue = '0'
       print('Token is invalid')
 
 asyncio.run(get_application_id())
-
-with open(process) as z:
-    processfinal = json.load(z)
 
 with open(settingssrc) as f:
     data = json.load(f)
