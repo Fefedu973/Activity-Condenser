@@ -21,7 +21,7 @@ pip install pywin32
 pip install psutil
 pip install -e "%currentDir%\infi_systray_modified"
 pip install darkdetect
-python settings.pyw
+python settingssetup.pyw
 python tray.py
 pause
 goto:eof

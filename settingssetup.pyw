@@ -197,6 +197,7 @@ class SettingsApp:
                     os.remove(os.path.join(os.getenv("APPDATA"),"Microsoft\Windows\Start Menu\Programs\Startup\Activity-Condenser.lnk"))
                 else:
                     pass
+            self.mainwindow.destroy()
         else:
             pass
 
