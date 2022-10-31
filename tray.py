@@ -2,13 +2,25 @@ from infi.systray import SysTrayIcon
 import os
 import time
 import subprocess as sp
+import json
 
-extProc = sp.Popen(['python','bot.py'])
-print(extProc)
-time.sleep(10)
-extProc2 = sp.Popen(['python','app.py'])
+def start():
+    global extProc
+    global extProc2
+    src = os.path.join(os.getenv("APPDATA"),"Activity-Condenser")
+    process = os.path.join(src,"process.json")
+    extProc = sp.Popen(['python','bot.py'])
+    BotProcess = {"bot":extProc.pid}
+    time.sleep(10)
+    extProc2 = sp.Popen(['python','app.py'])
+    AppProcess = {"app":extProc2.pid}
+    Processjoin = {**BotProcess, **AppProcess}
+    jsonString = json.dumps(Processjoin, indent=4, default=str)
+    jsonFile = open(process, "w")
+    jsonFile.write(jsonString)
+start()
 
-#creer un fichier json qui contient extProc et extProc2 et qui les envois à settings.pyw pour les kill quand on met à jour les paramètres
+#creer un fichier json qui contient les PIDs de extProc et de extProc2 et qui les envois à settings.pyw pour les kill quand on met à jour les paramètres
 
 hover_text = "Activity condenser"
 icon = "main.ico"
@@ -26,9 +38,9 @@ def about(sysTrayIcon):
 def status(sysTrayIcon):
     os.system("python status.pyw")
 
-menu_options = (('Settings...', 'settings.ico', settings),
-                ('Status', 'health.ico', status),
-                ('About', 'about.ico', about),
+menu_options = (('Settings...', 'settings-dark.ico', settings),
+                ('Status', 'health-dark.ico', status),
+                ('About', 'about-dark.ico', about),
                 ('-----', None, do_nothing),
                 ('Quit', "quit.ico", SysTrayIcon.QUIT),
                )

@@ -10,6 +10,11 @@ import darkdetect
 import subprocess as sp
 import json
 
+import ctypes
+
+myappid = 'mycompany.myproduct.subproduct.version' # arbitrary string
+ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
+
 if darkdetect.isDark():
     theme = 'dark'
     icontheme = 'about-white.ico'

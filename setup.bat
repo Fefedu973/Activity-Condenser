@@ -18,6 +18,7 @@ pip install pypresence
 pip install discord.py
 pip install nest-asyncio
 pip install pywin32
+pip install psutil
 pip install -e "%currentDir%\infi_systray_modified"
 pip install darkdetect
 python settings.pyw
@@ -103,6 +104,7 @@ pip install discord.py
 pip install nest-asyncio
 pip install pywin32
 pip install darkdetect
+pip install psutil
 pip install -e "%currentDir%\infi_systray_modified"
 Del %PYTHON_MSI%
 

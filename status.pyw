@@ -7,6 +7,13 @@ import psutil
 import os
 import json
 import subprocess as sp
+import time
+import threading
+
+import ctypes
+
+myappid = 'mycompany.myproduct.subproduct.version' # arbitrary string
+ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
 
 discord = None
 
@@ -19,6 +26,10 @@ else:
 
 src = os.path.join(os.getenv("APPDATA"),"Activity-Condenser")
 errors = os.path.join(src,"errors.json")
+process = os.path.join(src,"process.json")
+
+with open(process) as z:
+    processfinal = json.load(z)
 
 with open(errors) as f:
     errorfinal = json.load(f)
@@ -64,17 +75,19 @@ class StatusApp:
         label4.configure(text='Activity Condenser Status')
         label4.grid(column=0, pady="0 10", row=0)
         button2 = ttk.Button(frame2)
-        button2.configure(cursor="hand2", text='Reconnexion', width=15)
+        self.update = tk.StringVar()
+        self.update.set('Reconnect')
+        button2.configure(cursor="hand2", width=30, textvariable=self.update)
         button2.grid(column=0, pady="30 0", row=4, sticky="w")
         button2.configure(command=self.reconnect)
-        label1 = ttk.Label(frame2)
+        self.label1 = ttk.Label(frame2)
         self.discordstatus = tk.StringVar(value=discord)
-        label1.configure(text='label1', textvariable=self.discordstatus, foreground=discordcolor)
-        label1.grid(column=0, row=3, sticky="ne")
-        label3 = ttk.Label(frame2)
+        self.label1.configure(text='label1', textvariable=self.discordstatus, foreground=discordcolor)
+        self.label1.grid(column=0, row=3, sticky="ne")
+        self.label3 = ttk.Label(frame2)
         self.appstatus = tk.StringVar(value=app)
-        label3.configure(text='label3', textvariable=self.appstatus, foreground=appcolor)
-        label3.grid(column=0, row=3, sticky="se")
+        self.label3.configure(text='label3', textvariable=self.appstatus, foreground=appcolor)
+        self.label3.grid(column=0, row=3, sticky="se")
         sv_ttk.set_theme(theme)
         frame2.pack(side="top")
 
@@ -88,7 +101,74 @@ class StatusApp:
         self.mainwindow.destroy()
 
     def reconnect(self):
-        pass
+        try :
+            noerror = {"Errors":""}
+            jsonString = json.dumps(noerror, indent=4, default=str)
+            jsonFile = open(errors, "w")
+            jsonFile.write(jsonString)
+            jsonFile.close()
+        except:
+            pass
+        try:
+            botprocess = processfinal['bot']
+            appprocess = processfinal['app']
+            botterminate = psutil.Process(botprocess)
+            appterminate = psutil.Process(appprocess)
+            appterminate.terminate()
+            botterminate.terminate()
+        except:
+            pass
+        self.discordstatus.set("Loading...")
+        self.label1.configure(foreground='white')
+        self.appstatus.set("Loading...")
+        self.label3.configure(foreground='white')
+        t1 = threading.Thread(target=self.restart)
+        t1.start()
+    
+    def restart(self):
+        extProc = sp.Popen(['python','bot.py'])
+        BotProcess = {"bot":extProc.pid}
+        time.sleep(10)
+        extProc2 = sp.Popen(['python','app.py'])
+        AppProcess = {"app":extProc2.pid}
+        Processjoin = {**BotProcess, **AppProcess}
+        jsonString = json.dumps(Processjoin, indent=4, default=str)
+        jsonFile = open(process, "w")
+        jsonFile.write(jsonString)
+        time.sleep(5)
+        with open(errors) as f:
+            errorfinal = json.load(f)
+        #change here to change wits self.configure and not variables + add something for the connect button
+        if ("Discord.exe" in (p.name() for p in psutil.process_iter())) == True:
+            self.discordstatus.set("Discord is running")
+            self.label1.configure(foreground='green')
+            buttondiscord = 'Done'
+        else: 
+            self.discordstatus.set("Discord is not running")
+            self.label1.configure(foreground='red')
+            buttondiscord = 'Failed'
+
+        if errorfinal == {"Errors":""}:
+            self.appstatus.set("Activity Condenser is running")
+            self.label3.configure(foreground='green')
+            button = "Done"
+        else:
+            self.appstatus.set(errorfinal['Errors'])
+            self.label3.configure(foreground='red')
+            button = 'Failed'
+        
+        if button == buttondiscord:
+            if button == 'Failed':
+                buttonfinal = 'Failed'
+            else:
+                buttonfinal = 'Done'
+        else:
+            buttonfinal = 'Failed'
+        
+        self.update.set(buttonfinal)
+        time.sleep(5)
+        self.update.set('Reconnect')
+        print('done')
 
         #recoit les infos extProc1 et extProc2 puis kill le process puis relance le process avec sp.Popen et remet les infos dans le json puis met le texte en attente puis affiche les erreurs si il y en a sinon met Activity Condenser is running
 

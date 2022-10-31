@@ -14,6 +14,10 @@ import subprocess as sp
 import sys
 import os
 
+import ctypes
+
+myappid = 'mycompany.myproduct.subproduct.version' # arbitrary string
+ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
 src = os.path.join(os.getenv("APPDATA"),"Activity-Condenser")
 downloadsrc = os.path.join(src,"Activity-Condenser.exe")
 
