@@ -187,29 +187,17 @@ class SettingsApp:
                 json.dump(settings, f, indent=4)
             
             if run_on_start == 1:
-                src = os.path.join(os.getenv("APPDATA"),"Microsoft\Windows\Start Menu\Programs\Startup")
-                pthtemp = os.path.dirname(os.path.realpath(__file__))
-                pth = pthtemp + "\\start.vbs"
-                desktop = src
-                path = os.path.join(desktop, 'Activity-Condenser.lnk')
-                target = pth
-
-                shell = win32com.client.Dispatch("WScript.Shell")
-                shortcut = shell.CreateShortCut(path)
-                shortcut.Targetpath = target
-                shortcut.WindowStyle = 7
-                shortcut.save()
-                print(shortcut.Targetpath, shortcut)
+                pathscript = os.path.join(os.getenv("APPDATA"),"Microsoft\Windows\Start Menu\Programs\Startup\start.vbs")
+                pathprog = os.path.dirname(os.path.realpath(__file__))
+                pathprog2 = f'''"{pathprog}"'''
+                file = open(pathscript, "w")
+                file.write('''Set shell = CreateObject("WScript.Shell")'''+ "\n" +f"scriptdir = {pathprog2}"+ "\n" +'''shell.CurrentDirectory = scriptdir'''+ "\n" +'''shell.Run "start.bat", 0, False''')
+                file.close()
             else:
-                if os.path.exists(os.path.join(os.getenv("APPDATA"),"Microsoft\Windows\Start Menu\Programs\Startup\Activity-Condenser.lnk")):
-                    os.remove(os.path.join(os.getenv("APPDATA"),"Microsoft\Windows\Start Menu\Programs\Startup\Activity-Condenser.lnk"))
-                else:
-                    pass
+                os.remove(os.path.join(os.getenv("APPDATA"),"Microsoft\Windows\Start Menu\Programs\Startup\start.vbs"))
             self.mainwindow.destroy()
         else:
             pass
-
-
 
     def cancel(self):
         self.mainwindow.destroy()
