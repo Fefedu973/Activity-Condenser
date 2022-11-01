@@ -7,6 +7,7 @@ set currentDir=%cd%
 Del %USERPROFILE%\AppData\Local\Microsoft\WindowsApps\python.exe
 Del %USERPROFILE%\AppData\Local\Microsoft\WindowsApps\python3.exe
 
+start /b "" cscript setupmessage.vbs
 
 python --version 2>NUL
 if errorlevel 1 goto errorNoPython
@@ -21,6 +22,7 @@ pip install pywin32
 pip install psutil
 pip install -e "%currentDir%\infi_systray_modified"
 pip install darkdetect
+taskkill /F /FI "WINDOWTITLE eq Setting up your app" /T
 python settingssetup.pyw
 python tray.py
 pause
@@ -115,6 +117,7 @@ echo Dependencies of the project are now installed!
 echo ------------------------------------------------------------------
 echo,
 
+taskkill /F /FI "WINDOWTITLE eq Setting up your app" /T
 python settingssetup.pyw
 python tray.py
 
