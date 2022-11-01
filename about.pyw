@@ -54,7 +54,7 @@ class AboutApp:
         )
         label2.grid(column=0, row=3)
         label4 = ttk.Label(frame2)
-        label4.configure(font="{Arial} 12 {}", text="Version 1.0")
+        label4.configure(font="{Arial} 12 {}", text=f"Version {version['version']}")
         label4.grid(column=0, padx="60 0", row=0, sticky="w")
         canvas1 = tk.Canvas(frame2)
         canvas1.configure(height=50, width=50)
