@@ -16,6 +16,8 @@ import json
 import os
 import ctypes
 import ctypes as ct
+import time
+import psutil
 
 myappid = 'mycompany.myproduct.subproduct.version' # arbitrary string
 ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
@@ -47,6 +49,20 @@ print(getver)
 
 with open('version.json') as f:
     version = json.load(f)
+
+isdiscordrunning = False
+maxcheck = 0
+
+while isdiscordrunning == False:
+    if maxcheck < 10:
+        if ("Discord.exe" in (p.name() for p in psutil.process_iter())) == True:
+            isdiscordrunning = True
+        else: 
+            time.sleep(6)
+            maxcheck = maxcheck + 1
+    else:
+        break
+
 
 if data['checkonstart'] == 1:
     if getver == version['version']:
