@@ -65,7 +65,6 @@ Do you like the project? Leave a ⭐ star on the repo!
 
 ### **<ins><p align="center">Planed Activity Condenser features</p>**
 
-- Gui title bar follow system theme
 - Create a workaround for the button link (maybe a better discord optional plugin? I dont know maybe a script to paste in the discord console if you have any idea tell me!)
 - And clean the code a little bit (you can help me of course !)
 
