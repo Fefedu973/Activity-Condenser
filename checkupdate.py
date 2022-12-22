@@ -54,7 +54,7 @@ isdiscordrunning = False
 maxcheck = 0
 
 while isdiscordrunning == False:
-    if maxcheck < 10:
+    if maxcheck < -1:
         if ("Discord.exe" in (p.name() for p in psutil.process_iter())) == True:
             isdiscordrunning = True
         else: 
