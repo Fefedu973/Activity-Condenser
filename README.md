@@ -79,7 +79,7 @@ The wiki is under developpment
 ---
 ### **<ins><p align="center">Download :</p>**
 
-You can download the software from [GitHub Releases](https://github.com/Fefedu973/Activity-Condeser/releases).
+You can download the software from [GitHub Releases](https://github.com/Fefedu973/Activity-Condenser/releases).
 
 Supported platforms :
 
