@@ -87,11 +87,11 @@ class SettingsApp:
         spinbox1.grid(column=0, pady="0 5", row=12)
         button1 = ttk.Button(frame2)
         button1.configure(cursor="hand2",text="Ok", width=12)
-        button1.grid(column=0, pady="30 0", row=13, sticky="s")
+        button1.grid(column=0, pady="30 0", row=15, sticky="s")
         button1.configure(command=self.on_ok)
         separator3 = ttk.Separator(frame2)
         separator3.configure(orient="horizontal")
-        separator3.grid(column=0, ipadx=100, pady="10 40", row=13)
+        separator3.grid(column=0, ipadx=100, pady="10 40", row=15)
         separator4 = ttk.Separator(frame2)
         separator4.configure(orient="horizontal")
         separator4.grid(column=0, ipadx=100, pady="0 40", row=1)
@@ -115,6 +115,16 @@ class SettingsApp:
         self.appstatus = tk.StringVar(value='Invalid Token')
         self.label10.configure(text='label3', textvariable=self.appstatus, foreground='red')
         self.label10.grid(column=0, row=8,pady="0 10")
+        label6 = ttk.Label(frame2)
+        label6.configure(text="Default butttons link (when better discord plugin is not installed) :")
+        label6.grid(column=0, pady="0 5", row=13)
+        entry4 = ttk.Entry(frame2)
+        self.defaultlink = tk.StringVar()
+        self.defaultlink.set(data['defaultlink'])
+        entry4.configure(textvariable=self.defaultlink)
+        entry4.delete("0", "end")
+        entry4.insert("0", data['defaultlink'])
+        entry4.grid(column=0, pady="0 10", row=14)
         if tokenerror == '':
             self.label10.grid_forget()
         else:
@@ -171,13 +181,15 @@ class SettingsApp:
             refresh_time = self.refresh.get()
             username = self.username.get()
             checkonstart = self.check2.get()
+            defaultlink = self.defaultlink.get()
             settings = {
                 "run_on_start": run_on_start,
                 "Client_ID": Client_ID,
                 "Bot_Token": Bot_Token,
                 "refresh_time": refresh_time,
                 "username": username,
-                "checkonstart": checkonstart
+                "checkonstart": checkonstart,
+                "defaultlink": defaultlink
             }
             with open(settingssrc, 'w') as f:
                 json.dump(settings, f, indent=4)

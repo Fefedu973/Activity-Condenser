@@ -2,11 +2,28 @@ import json
 from pypresence import Presence
 import time
 import os
+import psutil
 
 src = os.path.join(os.getenv("APPDATA"),"Activity-Condenser")
 settingssrc = os.path.join(src,"settings.json")
 datasrc = os.path.join(src,"data.json")
 errors = os.path.join(src,"errors.json")
+
+modified_path = ""
+
+for process in psutil.process_iter():
+    if process.name() == "Discord.exe":
+        path = process.exe()
+        modified_path = path.replace("Discord.exe", "output.json")
+
+if modified_path == "":
+   noplugin = 1
+else:
+   noplugin = 0
+   if os.path.exists(modified_path):
+      noplugin = 0
+   else:
+      noplugin = 1
 
 with open(settingssrc) as j:
     settings = json.load(j)
@@ -28,8 +45,11 @@ except Exception as e:
 
 while 1 == 1:
    f = open(datasrc)
-
    data = json.load(f)
+   
+   if noplugin == 0:
+      o = open(modified_path)
+      btnlnk = json.load(o)
 
    Idfinal = []
    AppIDfinal = []
@@ -49,6 +69,7 @@ while 1 == 1:
    Small_textfinal = []
    Party_debug = {}
    buttons_tempfinal = []
+   Buttonslnk = []
 
    x = 0
 
@@ -86,10 +107,19 @@ while 1 == 1:
       Testdebug = int(settings['Client_ID'])
       x = x + 1
    z = 0
+
    while z < Idfinal[-1]:
       if Testdebug == AppIDfinal[z]:
          z = z + 1
          continue
+      
+      if noplugin == 0:
+         for app in btnlnk:
+            AppIDfinalint = int(AppIDfinal[z])
+            Appidpluginint = int(app['application_id'])
+
+            if Appidpluginint == AppIDfinalint:
+               Buttonslnk = app['buttons']
 
       if "end" in Timestampsfinal[z]:
          if "start" in Timestampsfinal[z]:
@@ -111,6 +141,7 @@ while 1 == 1:
       else:
          party_id_temp = Partyfinal[z]['id']
          party_size_temp = Partyfinal[z]['size']
+
       if Buttonsfinal[z] == []:
          buttons_temp = None
          buttons_temp2 = None
@@ -121,7 +152,10 @@ while 1 == 1:
          buttons_tempfinal = []
          while y < w:
             buttons_temp = Buttonsfinal[z][y]
-            buttons_temp2 = {"label": buttons_temp, "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"}
+            if noplugin == 0:
+               buttons_temp2 = {"label": buttons_temp, "url": Buttonslnk[y]}
+            else:
+               buttons_temp2 = {"label": buttons_temp, "url": settings['defaultlink']}
             buttons_tempfinal.append(buttons_temp2)
             print(buttons_tempfinal)
             y = y + 1

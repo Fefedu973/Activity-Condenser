@@ -4,5 +4,6 @@
     "Bot_Token": "",
     "refresh_time": 15,
     "username": "",
-    "checkonstart": 1
+    "checkonstart": 1,
+    "defaultlink": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
 }
