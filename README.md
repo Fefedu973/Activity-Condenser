@@ -42,20 +42,19 @@
 - Custom User picker
 - Custom Bot Token
 - Custom App ID
-- Start with windows (buggy)
+- Start with windows and discord
 - Auto Light/Dark mode switching
 - Auto check for update on start
 - Installation of the application with the modules provided + python + modification of a module automatically
 - Update With auto launch GUI
 - Update GUI
+- **YOU CAN INSTALL MY BETTER DISCORD PLUGIN TO TAKE ADVANTAGE OF THE FULL POWER OF MY SOFTWARE TO MAKE BUTTONS FULLY WORKING [HERE](https://github.com/Fefedu973/Activity-Condenser-Plugin-For-Better-Discord/blob/main/activity-condenser.plugin.js).**
 
 ## **Limitaions :**
 - Cannot change the main title text
 - Cannot set a refresh time less than 15 seconds
-- Cannot create working buttons (buttons are displayed but not working)
-- For now you need to create a discord server or invite your bot to one of your discord servers to be able to run the app
-
-ALL (except the last one) of these limitations are due to discord limitations. THEY ARE NOT FIXABLE as long as discord does not update its api
+- Cannot create working buttons (buttons are displayed but not working you can set a default link if you dont use my better discord plugin) **TO AVOID THIS DISCORD LIMITATION YOU CAN DOWNLOAD MY BETTER DISCORD PLUGIN [HERE](https://github.com/Fefedu973/Activity-Condenser-Plugin-For-Better-Discord/blob/main/activity-condenser.plugin.js).**
+- You need to create a discord server or invite your bot to one of your discord servers to be able to run the app
 
 This is not an exhaustive list. Install Activity Condenser to see all it can do!
   
@@ -65,7 +64,6 @@ Do you like the project? Leave a ⭐ star on the repo!
 
 ### **<ins><p align="center">Planed Activity Condenser features</p>**
 
-- Create a workaround for the button link (maybe a better discord optional plugin? I dont know maybe a script to paste in the discord console if you have any idea tell me!)
 - And clean the code a little bit (you can help me of course !)
 
 Of course you can help me with pull requests !
