@@ -64,7 +64,7 @@ Do you like the project? Leave a ⭐ star on the repo!
 
 ### **<ins><p align="center">Planed Activity Condenser features</p>**
 
-- And clean the code a little bit (you can help me of course !)
+- Clean the code a little bit (you can help me of course !)
 
 Of course you can help me with pull requests !
 
